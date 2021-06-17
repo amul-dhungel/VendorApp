@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:get/get.dart';
-import 'package:r_dotted_line_border/r_dotted_line_border.dart';
-import 'package:vendr/screens/Profile.dart';
-import 'package:vendr/screens/cartView.dart';
-import 'package:vendr/screens/vendorItems1.dart';
 import 'package:vendr/utils/appWidget.dart';
 import 'package:vendr/utils/colors.dart';
 import 'package:vendr/utils/images.dart';
+
+import 'Cart/cartView.dart';
+import 'Profile/Profile.dart';
+import 'Vendor/vendor.dart';
+
 class Dashboard extends StatefulWidget {
   @override
   _DashboardState createState() => _DashboardState();

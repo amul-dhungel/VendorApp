@@ -1,9 +1,9 @@
-import 'package:bubble/bubble.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:vendr/screens/EditListing.dart';
 import 'package:vendr/utils/appWidget.dart';
 import 'package:vendr/utils/colors.dart';
+
+import 'EditListing.dart';
 
 class ActiveListing extends StatefulWidget {
   const ActiveListing({Key? key}) : super(key: key);

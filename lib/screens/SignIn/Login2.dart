@@ -1,13 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:vendr/screens/Dashboard.dart';
-import 'package:vendr/screens/ProductInfo.dart';
-import 'package:vendr/screens/SignUp3.dart';
-import 'package:vendr/screens/VendorItems1.dart';
+import 'package:vendr/screens/Dashboard/Dashboard.dart';
 import 'package:vendr/utils/appWidget.dart';
 import 'package:vendr/utils/colors.dart';
-import 'package:vendr/utils/images.dart';
 class LogIn2 extends StatefulWidget {
   @override
   _LogIn2State createState() => _LogIn2State();

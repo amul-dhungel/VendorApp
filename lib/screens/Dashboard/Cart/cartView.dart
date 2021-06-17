@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:vendr/screens/Buying.dart';
-import 'package:vendr/screens/Selling.dart';
 import 'package:vendr/utils/appWidget.dart';
 import 'package:vendr/utils/colors.dart';
-import 'package:vendr/utils/images.dart';
+
+import 'Buying/Buying.dart';
+import 'Selling/Selling.dart';
 
 class CartView extends StatefulWidget {
   @override

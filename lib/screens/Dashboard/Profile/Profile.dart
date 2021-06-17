@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:vendr/screens/EditProfile.dart';
-import 'package:vendr/screens/ListAnItem.dart';
-import 'package:vendr/screens/ProfilePreview.dart';
-import 'package:vendr/screens/Saftey.dart';
-import 'package:vendr/screens/Setting.dart';
+import 'EditProfile.dart';
+import 'ListAnItem.dart';
+import 'ProfilePreview.dart';
+import 'Saftey.dart';
 import 'package:vendr/utils/appWidget.dart';
 import 'package:vendr/utils/colors.dart';
 import 'package:vendr/utils/images.dart';
+
+import 'Setting.dart';
 
 class ProfileScreen extends StatefulWidget {
   @override

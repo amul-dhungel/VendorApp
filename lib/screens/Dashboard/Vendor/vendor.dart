@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_tindercard/flutter_tindercard.dart';
 import 'package:get/get.dart';
-import 'package:vendr/screens/productAsking.dart';
-import 'package:vendr/screens/productSearch.dart';
+import 'package:vendr/screens/Dashboard/Vendor/productAsking.dart';
+import 'package:vendr/screens/Vendor/productSearch.dart';
 import 'package:vendr/utils/appWidget.dart';
 import 'package:vendr/utils/colors.dart';
 

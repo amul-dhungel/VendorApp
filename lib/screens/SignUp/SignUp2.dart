@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:vendr/screens/SignUp3.dart';
 import 'package:vendr/utils/appWidget.dart';
 import 'package:vendr/utils/colors.dart';
+
+import 'SignUp3.dart';
 class SignUp2 extends StatefulWidget {
   @override
   _SignUp2State createState() => _SignUp2State();

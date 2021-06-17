@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:vendr/screens/SignUp6.dart';
+import 'SignUp6.dart';
 import 'package:vendr/utils/appWidget.dart';
 import 'package:vendr/utils/colors.dart';
 class SignUp5 extends StatefulWidget {

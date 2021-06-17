@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:vendr/screens/Profile.dart';
-import 'package:vendr/screens/productInfo.dart';
+import 'package:vendr/screens/Dashboard/Vendor/productInfo.dart';
 import 'constants.dart';
 import 'colors.dart';
 import 'images.dart';

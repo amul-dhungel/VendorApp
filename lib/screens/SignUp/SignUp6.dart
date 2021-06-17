@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:vendr/utils/appWidget.dart';
 import 'package:vendr/utils/colors.dart';
 
-import 'Dashboard.dart';
+import '../Dashboard/Dashboard.dart';
 class SignUp6 extends StatefulWidget {
   @override
   _SignUp6State createState() => _SignUp6State();

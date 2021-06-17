@@ -2,9 +2,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:vendr/screens/ItemsForSale.dart';
-import 'package:vendr/screens/Profile.dart';
-import 'package:vendr/screens/Search.dart';
 import 'package:vendr/screens/SplashScreen.dart';
 import 'package:vendr/utils/colors.dart';
 

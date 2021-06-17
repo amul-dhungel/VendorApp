@@ -1,19 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:vendr/screens/Login2.dart';
-import 'package:vendr/screens/SignUp.dart';
-import 'package:vendr/screens/SignUp2.dart';
+import 'package:vendr/screens/SignIn/Login2.dart';
 import 'package:vendr/utils/appWidget.dart';
 import 'package:vendr/utils/colors.dart';
 import 'package:vendr/utils/constants.dart';
-import 'package:vendr/utils/images.dart';
-class LoginScreen extends StatefulWidget {
+import 'SignUp/SignUp2.dart';
+class AfterSplash extends StatefulWidget {
   @override
-  _LoginScreenState createState() => _LoginScreenState();
+  _AfterSplashState createState() => _AfterSplashState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _AfterSplashState extends State<AfterSplash> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

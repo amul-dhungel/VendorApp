@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:vendr/screens/Login.dart';
+import 'package:vendr/screens/AfterSplash.dart';
 import 'package:vendr/utils/colors.dart';
 import 'package:vendr/utils/images.dart';
 class SplashScreen extends StatefulWidget {
@@ -14,7 +14,7 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     new Future.delayed(
         const Duration(seconds: 3),
-        () => Navigator.pushReplacement(context,MaterialPageRoute(builder: (_)=>LoginScreen())));
+        () => Navigator.pushReplacement(context,MaterialPageRoute(builder: (_)=>AfterSplash())));
     
   }
   @override

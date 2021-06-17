@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:vendr/screens/ActiveListing.dart';
-import 'package:vendr/screens/PreviousListing.dart';
+import 'ActiveListing.dart';
+import 'PreviousListing.dart';
 import 'package:vendr/utils/appWidget.dart';
 import 'package:vendr/utils/colors.dart';
-import 'package:vendr/utils/images.dart';
 
 class Selling extends StatefulWidget {
   const Selling({Key? key}) : super(key: key);

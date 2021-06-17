@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:vendr/screens/ItemsForSale.dart';
 import 'package:vendr/utils/appWidget.dart';
 import 'package:vendr/utils/colors.dart';
 import 'package:vendr/utils/images.dart';
+
+import 'ItemsForSale.dart';
 class ProfilePreview extends StatefulWidget {
   @override
   _ProfilePreviewState createState() => _ProfilePreviewState();
