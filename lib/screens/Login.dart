@@ -1,0 +1,61 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
+import 'package:vendr/screens/Login2.dart';
+import 'package:vendr/screens/SignUp.dart';
+import 'package:vendr/screens/SignUp2.dart';
+import 'package:vendr/utils/appWidget.dart';
+import 'package:vendr/utils/colors.dart';
+import 'package:vendr/utils/constants.dart';
+import 'package:vendr/utils/images.dart';
+class LoginScreen extends StatefulWidget {
+  @override
+  _LoginScreenState createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: c_white,
+      body: Container(
+        padding:  EdgeInsets.only(left:30,right: 30,bottom: 10,top: MediaQuery.of(context).padding.top+10),
+        height: MediaQuery.of(context).size.height,
+        child: Column(crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            _login(),
+            Spacer(flex: 1,),
+            _logoAndBut(),
+            Spacer(flex: 1,),
+            Center(child: _termsAndCondition()),
+        ],),
+      )
+    );
+  }
+
+  Widget _termsAndCondition()=>Column(
+    
+    children: [
+    text("By clicking Log in or Sign up, you agree with our ",fontSize: textSizeSmall,isCentered: true),
+    text("Terms of service.",lineThrough: true,fontSize: textSizeSmall,isCentered: true)
+  ],);
+
+  Widget _logoAndBut()=>Center(
+    child: Column(mainAxisAlignment: MainAxisAlignment.center,crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        logo(welcomeText: true),
+        SizedBox(height:20),
+        buttonWid(label: "Sign Up",border: true,borderColor: c_white,
+          function: (){
+          Get.to(SignUp2());
+        }),
+      ],
+    ),
+  );
+
+  Widget _login()=>GestureDetector(
+    onTap: (){
+        Get.to(LogIn2());
+    },
+    child: text("Log in",textColor: mainColor,fontWeight: FontWeight.w900));
+}

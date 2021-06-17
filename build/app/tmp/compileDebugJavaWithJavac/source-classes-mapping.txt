@@ -1,0 +1,4 @@
+io/flutter/plugins/GeneratedPluginRegistrant.java
+ io.flutter.plugins.GeneratedPluginRegistrant
+com/lakshydeep/vendr/BuildConfig.java
+ com.lakshydeep.vendr.BuildConfig
