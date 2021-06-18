@@ -17,56 +17,55 @@ class _ItemsForSaleState extends State<ItemsForSale> {
     return Scaffold(
       backgroundColor: c_white,
       appBar: topWid(),
-      body: Column(
-        children: [
-          
-          text("Items For Sale",
-              isCentered: true,
-              textColor: mainColor,
-              fontWeight: FontWeight.bold,
-              fontSize: 39.0),
-          curveLine(),
-          SizedBox(height:10),
-          GridView.count(
-          physics: NeverScrollableScrollPhysics(),
-          shrinkWrap: true,
-          
-          crossAxisCount: 4,
-          children: List.generate(
-          12,
-          (index) => Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: CircleAvatar(
-              backgroundColor: Colors.green,
-              radius: 10,
-            ),
+      body: ScrollConfiguration(
+        behavior: MyBehaviora(),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              
+              text("Items For Sale",
+                  isCentered: true,
+                  textColor: mainColor,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 39.0),
+              curveLine(),
+              SizedBox(height:10),
+              GridView.count(
+                physics: NeverScrollableScrollPhysics(),
+                shrinkWrap: true,
+                crossAxisCount: 4,
+                children: List.generate(12,(index) => Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: CircleAvatar(
+                    backgroundColor: Colors.green,
+                    radius: 10,
+                  ),),),),
+              text("Sold Items",
+                  isCentered: true,
+                  textColor: mainColor,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 39.0),
+              curveLine(),
+              SizedBox(height:10),
+              GridView.count(
+                physics: NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
+              
+              crossAxisCount: 4,
+              children: List.generate(
+              8,
+              (index) => Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: CircleAvatar(
+                  backgroundColor: Colors.green,
+                  radius: 10,
+                ),
+              ),
+              ),
+              ),
+            ],
           ),
-          ),
-          ),
-          text("Sold Items",
-              isCentered: true,
-              textColor: mainColor,
-              fontWeight: FontWeight.bold,
-              fontSize: 39.0),
-          curveLine(),
-          SizedBox(height:10),
-          GridView.count(
-            physics: NeverScrollableScrollPhysics(),
-          shrinkWrap: true,
-          
-          crossAxisCount: 4,
-          children: List.generate(
-          8,
-          (index) => Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: CircleAvatar(
-              backgroundColor: Colors.green,
-              radius: 10,
-            ),
-          ),
-          ),
-          ),
-        ],
+        ),
       ),
     );
   }

@@ -16,88 +16,91 @@ class _ListAnItemState extends State<ListAnItem> {
     return Scaffold(
       backgroundColor: c_white,
       appBar: appbar(context, title: "List an Item"),
-      body: ListView(
-        padding: const EdgeInsets.only(bottom:40),
-        children: [
-          _photo(),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              children: [
-                textwithSwitch(label: "Allow local Pickup"),
-                textwithSwitch(label: "Allow On All Categories"),
-              ],
+      body: ScrollConfiguration(
+        behavior: MyBehaviora(),
+        child: ListView(
+          padding: const EdgeInsets.only(bottom:40),
+          children: [
+            _photo(),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                children: [
+                  textwithSwitch(label: "Allow local Pickup"),
+                  textwithSwitch(label: "Allow On All Categories"),
+                ],
+              ),
             ),
-          ),
-          greyCont("Title"),
-          SizedBox(
-            height: 10,
-          ),
-          whiteCont("Add Title"),
-          SizedBox(
-            height: 10,
-          ),
-          greyCont("Description"),
-          SizedBox(
-            height: 10,
-          ),
-          whiteCont("Add Description"),
-          SizedBox(
-            height: 10,
-          ),
-          greyCont("Asking Price"),
-          SizedBox(
-            height: 10,
-          ),
-          whiteCont("Add Price"),
-          SizedBox(
-            height: 10,
-          ),
-          curveLine(),
-          conditionChoosing(),
-          curveLine(),
-          SizedBox(
-            height: 30,
-          ),
-          Container(
-              padding: const EdgeInsets.fromLTRB(10.0, 0.0, 10.0, 0.0),
-              child: textInputContainer(
-                  label: "Add Categories", hint: "Type to add categories")),
-          Row(children: [
-            SizedBox(width:10),
-            _categories(label: "All"),
-            _categories(label: "Electronics")
-          ],),
-          SizedBox(
-            height: 20,
-          ),
-          curveLine(),
-          SizedBox(
-            height: 10,
-          ),
-          text("Preview Listing",
-              isCentered: true,
-              textColor: mainColor,
-              lineThrough: true,
-              fontSize: 21.0),
-          SizedBox(
-            height: 20,
-          ),
-          Container(
-            padding: const EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 0),
-            child: buttonWid(
-                label: "List Items",
-                function: () {},
-                border: true,
-                height: 70.0,
-                fontsize: 30.0,
-                fontWeight: FontWeight.bold,
-                icon: true),
-          ),
-          SizedBox(
-            height: 20,
-          ),
-        ],
+            greyCont("Title"),
+            SizedBox(
+              height: 10,
+            ),
+            whiteCont("Add Title"),
+            SizedBox(
+              height: 10,
+            ),
+            greyCont("Description"),
+            SizedBox(
+              height: 10,
+            ),
+            whiteCont("Add Description"),
+            SizedBox(
+              height: 10,
+            ),
+            greyCont("Asking Price"),
+            SizedBox(
+              height: 10,
+            ),
+            whiteCont("Add Price"),
+            SizedBox(
+              height: 10,
+            ),
+            curveLine(),
+            conditionChoosing(),
+            curveLine(),
+            SizedBox(
+              height: 30,
+            ),
+            Container(
+                padding: const EdgeInsets.fromLTRB(10.0, 0.0, 10.0, 0.0),
+                child: textInputContainer(
+                    label: "Add Categories", hint: "Type to add categories")),
+            Row(children: [
+              SizedBox(width:10),
+              _categories(label: "All"),
+              _categories(label: "Electronics")
+            ],),
+            SizedBox(
+              height: 20,
+            ),
+            curveLine(),
+            SizedBox(
+              height: 10,
+            ),
+            text("Preview Listing",
+                isCentered: true,
+                textColor: mainColor,
+                lineThrough: true,
+                fontSize: 21.0),
+            SizedBox(
+              height: 20,
+            ),
+            Container(
+              padding: const EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 0),
+              child: buttonWid(
+                  label: "List Items",
+                  function: () {},
+                  border: true,
+                  height: 70.0,
+                  fontsize: 30.0,
+                  fontWeight: FontWeight.bold,
+                  icon: true),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+          ],
+        ),
       ),
     );
   }

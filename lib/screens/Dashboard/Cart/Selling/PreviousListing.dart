@@ -19,68 +19,71 @@ class _PreviousListingState extends State<PreviousListing> {
     return Scaffold(
       
       appBar: appbarOfMessaging(context,title: "Bose Headphones", messageType: "Sold"),
-      body: ListView(
-        padding: const EdgeInsets.only(left:0,right: 0),
-        children: [
-        text("78 people were interested",
-            fontSize: 23.0,isCentered: true,
-            textColor: mainColor,
-            fontWeight: FontWeight.bold,
-            lineThrough: true),
-        
-        SizedBox(
-          height: 25,
-        ),
-        _image(),
-        SizedBox(
-          height: 25,
-        ),
-        Padding(
-          padding: const EdgeInsets.only(left:50.0,right: 50),
-          child: buttonWid(
-            
-            label: "Relist Item", function: (){},butColor: mainColor,border: true),
-        ),
-        SizedBox(
-          height: 10,
-        ),
-        curveLine(),
-        text("  Buyer",textColor: mainColor,fontWeight: FontWeight.w700),
-        ListTile(
-          leading: CircleAvatar(
-            radius: 30,
-            backgroundImage: AssetImage("images/vendorItem1Show.png"),
-          ),
-          title: text("XBox One Controller",
-              textColor: Colors.black,
+      body: ScrollConfiguration(
+        behavior: MyBehaviora(),
+        child: ListView(
+          padding: const EdgeInsets.only(left:0,right: 0),
+          children: [
+          text("78 people were interested",
+              fontSize: 23.0,isCentered: true,
+              textColor: mainColor,
               fontWeight: FontWeight.bold,
-              fontSize: 20.0),
-          subtitle: text("I am interested buddy")),
-        text("  Messages",textColor: mainColor,fontWeight: FontWeight.w700),
-        ListView.builder(
-          itemCount: 10,
-          shrinkWrap: true,
-          physics: NeverScrollableScrollPhysics(),
-          itemBuilder: (context,i){
-          return Column(
-                children: [
-                  ListTile(
-                    leading: CircleAvatar(
-                      radius: 30,
-                      backgroundImage: AssetImage("images/vendorItem1Show.png"),
-                    ),
-                    title: text("XBox One Controller",
-                        textColor: Colors.black,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20.0),
-                    subtitle: text("I am interested buddy")),
-                curveLine(),],);
-        })
-        
+              lineThrough: true),
+          
+          SizedBox(
+            height: 25,
+          ),
+          _image(),
+          SizedBox(
+            height: 25,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left:50.0,right: 50),
+            child: buttonWid(
+              
+              label: "Relist Item", function: (){},butColor: mainColor,border: true),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          curveLine(),
+          text("  Buyer",textColor: mainColor,fontWeight: FontWeight.w700),
+          ListTile(
+            leading: CircleAvatar(
+              radius: 30,
+              backgroundImage: AssetImage("images/vendorItem1Show.png"),
+            ),
+            title: text("XBox One Controller",
+                textColor: Colors.black,
+                fontWeight: FontWeight.bold,
+                fontSize: 20.0),
+            subtitle: text("I am interested buddy")),
+          text("  Messages",textColor: mainColor,fontWeight: FontWeight.w700),
+          ListView.builder(
+            itemCount: 10,
+            shrinkWrap: true,
+            physics: NeverScrollableScrollPhysics(),
+            itemBuilder: (context,i){
+            return Column(
+                  children: [
+                    ListTile(
+                      leading: CircleAvatar(
+                        radius: 30,
+                        backgroundImage: AssetImage("images/vendorItem1Show.png"),
+                      ),
+                      title: text("XBox One Controller",
+                          textColor: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20.0),
+                      subtitle: text("I am interested buddy")),
+                  curveLine(),],);
+          })
+          
+              
             
           
-        
-      ]),
+        ]),
+      ),
     );
   }
 

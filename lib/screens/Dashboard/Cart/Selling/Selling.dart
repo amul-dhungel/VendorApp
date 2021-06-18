@@ -16,78 +16,87 @@ class _SellingState extends State<Selling> {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: ListView(
-        
-        children: [
-        text("  Active Listing",
-            textColor: mainColor,
-            fontSize: 20.0,
-            fontWeight: FontWeight.bold),
-        _activeListing(),
-        text("  Previous Listing",
-            textColor: mainColor,
-            fontSize: 20.0,
-            fontWeight: FontWeight.bold),
-        _previousListing(),
-        recentMsg(),
-        _chatHead()
-      ]),
+      child: ScrollConfiguration(
+        behavior: MyBehaviora(),
+        child: ListView(
+          
+          children: [
+          text("  Active Listing",
+              textColor: mainColor,
+              fontSize: 20.0,
+              fontWeight: FontWeight.bold),
+          _activeListing(),
+          text("  Previous Listing",
+              textColor: mainColor,
+              fontSize: 20.0,
+              fontWeight: FontWeight.bold),
+          _previousListing(),
+          recentMsg(),
+          _chatHead()
+        ]),
+      ),
     );
   }
   Widget _activeListing(){
     return Container(
           height: 100,
           padding: const EdgeInsets.only(top:8),
-          child: ListView.builder(
-            itemCount: 20,
-            scrollDirection: Axis.horizontal,
-            itemBuilder: (context,i){
-            return GestureDetector(
-              onTap: ()=>Get.to(ActiveListing()),
-              child: Container(
-                margin: const EdgeInsets.only(right: 5),
-                child: Column(crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  CircleAvatar(
-                    radius: 30,
-                    backgroundImage:
-                        AssetImage("images/vendorItems2Show.png"),
-                  ),
-                  text("200\$")
-                  
-                ],
-          ),
-              ),
-            );
-          })
+          child: ScrollConfiguration(
+            behavior: MyBehaviora(),
+            child: ListView.builder(
+              itemCount: 20,
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (context,i){
+              return GestureDetector(
+                onTap: ()=>Get.to(ActiveListing()),
+                child: Container(
+                  margin: const EdgeInsets.only(right: 5),
+                  child: Column(crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    CircleAvatar(
+                      radius: 30,
+                      backgroundImage:
+                          AssetImage("images/vendorItems2Show.png"),
+                    ),
+                    text("200\$")
+                    
+                  ],
+            ),
+                ),
+              );
+            }),
+          )
         );
   }
   Widget _previousListing(){
     return Container(
           height: 100,
           padding: const EdgeInsets.only(top:8),
-          child: ListView.builder(
-            itemCount: 20,
-            scrollDirection: Axis.horizontal,
-            itemBuilder: (context,i){
-            return GestureDetector(
-              onTap: ()=>Get.to(PreviousListing()),
-              child: Container(
-                margin: const EdgeInsets.only(right: 5),
-                child: Column(crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  CircleAvatar(
-                    radius: 30,
-                    backgroundImage:
-                        AssetImage("images/vendorItems2Show.png"),
-                  ),
-                  text("200\$")
-                  
-                ],
-          ),
-              ),
-            );
-          })
+          child: ScrollConfiguration(
+            behavior: MyBehaviora(),
+            child: ListView.builder(
+              itemCount: 20,
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (context,i){
+              return GestureDetector(
+                onTap: ()=>Get.to(PreviousListing()),
+                child: Container(
+                  margin: const EdgeInsets.only(right: 5),
+                  child: Column(crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    CircleAvatar(
+                      radius: 30,
+                      backgroundImage:
+                          AssetImage("images/vendorItems2Show.png"),
+                    ),
+                    text("200\$")
+                    
+                  ],
+            ),
+                ),
+              );
+            }),
+          )
         );
   }
   Widget _chatHead(){

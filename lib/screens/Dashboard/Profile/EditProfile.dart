@@ -15,62 +15,65 @@ class _EditProfileState extends State<EditProfile> {
     return Scaffold(
       backgroundColor: c_white,
       appBar: appbar(context, title: "Edit Profile"),
-      body: ListView(
-        padding: const EdgeInsets.only(bottom:40),
-        children: [
-          _photo(),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              children: [
-                textwithSwitch(label: "Show phone number on profile"),
-                textwithSwitch(label: "Show address on profile"),
-              ],
+      body: ScrollConfiguration(
+        behavior: MyBehaviora(),
+        child: ListView(
+          padding: const EdgeInsets.only(bottom:40),
+          children: [
+            _photo(),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                children: [
+                  textwithSwitch(label: "Show phone number on profile"),
+                  textwithSwitch(label: "Show address on profile"),
+                ],
+              ),
             ),
-          ),
-          greyCont("Location"),
-          SizedBox(
-            height: 10,
-          ),
-          whiteCont("Location"),
-          SizedBox(
-            height: 10,
-          ),
-          greyCont("Address Line 1"),
-          SizedBox(
-            height: 10,
-          ),
-          whiteCont("Address Line 1"),
-          SizedBox(
-            height: 10,
-          ),
-          greyCont("Address Line 2"),
-          SizedBox(
-            height: 10,
-          ),
-          whiteCont("Address Line 2"),
-          SizedBox(
-            height: 10,
-          ),
-          greyCont("A Short Bio (Recommended)"),
-          SizedBox(
-            height: 10,
-          ),
-          curveLine(),
-          Container(
-            padding: const EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 0),
+            greyCont("Location"),
+            SizedBox(
+              height: 10,
+            ),
+            whiteCont("Location"),
+            SizedBox(
+              height: 10,
+            ),
+            greyCont("Address Line 1"),
+            SizedBox(
+              height: 10,
+            ),
+            whiteCont("Address Line 1"),
+            SizedBox(
+              height: 10,
+            ),
+            greyCont("Address Line 2"),
+            SizedBox(
+              height: 10,
+            ),
+            whiteCont("Address Line 2"),
+            SizedBox(
+              height: 10,
+            ),
+            greyCont("A Short Bio (Recommended)"),
+            SizedBox(
+              height: 10,
+            ),
+            curveLine(),
+            Container(
+              padding: const EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 0),
 
-            child: buttonWid(
-                label: "Save Profile",
-                function: () {},
-                border: true,
-                height: 70.0,
-                fontsize: 30.0,
-                fontWeight: FontWeight.bold,
-                icon: false),
-          ),
-          
-        ],
+              child: buttonWid(
+                  label: "Save Profile",
+                  function: () {},
+                  border: true,
+                  height: 70.0,
+                  fontsize: 30.0,
+                  fontWeight: FontWeight.bold,
+                  icon: false),
+            ),
+            
+          ],
+        ),
       ),
     );
   }

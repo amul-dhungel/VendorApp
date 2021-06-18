@@ -3,7 +3,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_tindercard/flutter_tindercard.dart';
 import 'package:get/get.dart';
 import 'package:vendr/screens/Dashboard/Vendor/productAsking.dart';
-import 'package:vendr/screens/Vendor/productSearch.dart';
+import 'package:vendr/screens/Dashboard/Vendor/productInfo.dart';
+import 'package:vendr/screens/Dashboard/Vendor/productSearch.dart';
 import 'package:vendr/utils/appWidget.dart';
 import 'package:vendr/utils/colors.dart';
 
@@ -56,6 +57,7 @@ class _VendorItems1State extends State<VendorItems1> {
           ],
         ));
   }
+  
   Widget buttonWidget() {
   return Container(
       height: 100,
@@ -305,6 +307,7 @@ List<Widget> albumpics = [
           verified: false),
       
     ];
+    
 // =======
 //         body: GestureDetector(
 //           onTap: (){

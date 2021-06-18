@@ -18,15 +18,21 @@ class _AfterSplashState extends State<AfterSplash> {
       body: Container(
         padding:  EdgeInsets.only(left:30,right: 30,bottom: 10,top: MediaQuery.of(context).padding.top+10),
         height: MediaQuery.of(context).size.height,
-        child: Column(crossAxisAlignment: CrossAxisAlignment.end,
-          children: [
-            _login(),
-            Spacer(flex: 1,),
-            _logoAndBut(),
-            Spacer(flex: 1,),
-            Center(child: _termsAndCondition()),
-        ],),
-      )
+        child: CustomScrollView(
+          scrollBehavior: MyBehaviora(),
+          slivers: [
+            SliverFillRemaining(
+              hasScrollBody: false,
+              child: Column(crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  _login(),
+                  Spacer(flex: 1,),
+                  _logoAndBut(),
+                  Spacer(flex: 1,),
+                  Center(child: _termsAndCondition()),
+          ],),
+        ),
+          ]))
     );
   }
 

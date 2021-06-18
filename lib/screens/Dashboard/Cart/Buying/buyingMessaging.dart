@@ -21,63 +21,66 @@ class _BuyingMessagesState extends State<BuyingMessages> {
     return Scaffold(
       bottomNavigationBar: _bottomBar(),
       appBar: appbarOfMessaging(context,title: "Grey Sumpreme Logo", messageType: "Buying"),
-      body: ListView(
-        padding: const EdgeInsets.only(left:10,right: 10),
-        children: [
-        text("Karl",
-            fontSize: 23.0,isCentered: true,
+      body: ScrollConfiguration(
+        behavior: MyBehaviora(),
+        child: ListView(
+          padding: const EdgeInsets.only(left:10,right: 10),
+          children: [
+          text("Karl",
+              fontSize: 23.0,isCentered: true,
+              textColor: mainColor,
+              fontWeight: FontWeight.bold,
+              lineThrough: true),
+          text(
+            "Grey Sumpreme BoxLogo 2012",isCentered:  true,
+            fontSize: 23.0,maxLine: 2,
             textColor: mainColor,
             fontWeight: FontWeight.bold,
-            lineThrough: true),
-        text(
-          "Grey Sumpreme BoxLogo 2012",isCentered:  true,
-          fontSize: 23.0,maxLine: 2,
-          textColor: mainColor,
-          fontWeight: FontWeight.bold,
-        ),
-        SizedBox(
-          height: 25,
-        ),
-        CircleAvatar(
-            backgroundColor: mainColor,
-            radius: 84,
-            child: CircleAvatar(
-              radius: 80,backgroundColor: c_white,
+          ),
+          SizedBox(
+            height: 25,
+          ),
+          CircleAvatar(
+              backgroundColor: mainColor,
+              radius: 84,
               child: CircleAvatar(
-                backgroundImage:
-                    AssetImage("images/vendorItem1Show.png"),
-                radius: 78,
-              ),
-            )),
-        SizedBox(
-          height: 25,
-        ),
-        text(
-          "Asking Price 600\$",isCentered: true,
-          fontSize: 23.0,
-          textColor: mainColor,
-          fontWeight: FontWeight.bold,
-        ),
-        SizedBox(
-          height: 10,
-        ),
-        SvgPicture.asset(img_curveLine,),
-        ListView.builder(
-          itemCount: 15,
-          physics: NeverScrollableScrollPhysics(),
-          shrinkWrap: true,
-          itemBuilder: (context,i){
-          return Row(
-            mainAxisAlignment: i%2==0?MainAxisAlignment.start:MainAxisAlignment.end,
-            children: [
-            chat("message",i%2==0?0:1)
-          ],);
-        })
-        
+                radius: 80,backgroundColor: c_white,
+                child: CircleAvatar(
+                  backgroundImage:
+                      AssetImage("images/vendorItem1Show.png"),
+                  radius: 78,
+                ),
+              )),
+          SizedBox(
+            height: 25,
+          ),
+          text(
+            "Asking Price 600\$",isCentered: true,
+            fontSize: 23.0,
+            textColor: mainColor,
+            fontWeight: FontWeight.bold,
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          SvgPicture.asset(img_curveLine,),
+          ListView.builder(
+            itemCount: 15,
+            physics: NeverScrollableScrollPhysics(),
+            shrinkWrap: true,
+            itemBuilder: (context,i){
+            return Row(
+              mainAxisAlignment: i%2==0?MainAxisAlignment.start:MainAxisAlignment.end,
+              children: [
+              chat("message",i%2==0?0:1)
+            ],);
+          })
+          
+              
             
           
-        
-      ]),
+        ]),
+      ),
     );
   }
 }

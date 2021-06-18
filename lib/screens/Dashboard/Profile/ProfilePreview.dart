@@ -16,42 +16,48 @@ class _ProfilePreviewState extends State<ProfilePreview> {
     return Scaffold(
       backgroundColor: c_white,
       appBar: appbar(context, title: "Profile Preview"),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,crossAxisAlignment: CrossAxisAlignment.center,
-        
-        children: [
-          SizedBox(height:10),
-          _report(),
-          _profilePic(),
-          SizedBox(height:20),
-          text("Cameron C.",textColor: c_black,isCentered: true,fontWeight: FontWeight.bold),
-          SizedBox(height:25),
-          curveLine(),
-          SizedBox(height:20),
-          text("Check out my store!",textColor: c_black,isCentered: true),
-          SizedBox(height:20),
-          curveLine(),
-          Spacer(flex: 1,),
-          text("Member since May 13, 2019",textColor: c_black,isCentered: true),
-          SizedBox(height:10),
-          text("Based in Westfield NJ, 07090\nUnited States",textColor: c_black,isCentered: true,maxLine: 3),
+      body: CustomScrollView(
+          scrollBehavior: MyBehaviora(),
+          slivers: [
+            SliverFillRemaining(
+              hasScrollBody: false,
+              child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,crossAxisAlignment: CrossAxisAlignment.center,
+              
+              children: [
+                SizedBox(height:10),
+                _report(),
+                _profilePic(),
+                SizedBox(height:20),
+                text("Cameron C.",textColor: c_black,isCentered: true,fontWeight: FontWeight.bold),
+                SizedBox(height:25),
+                curveLine(),
+                SizedBox(height:20),
+                text("Check out my store!",textColor: c_black,isCentered: true),
+                SizedBox(height:20),
+                curveLine(),
+                Spacer(flex: 1,),
+                text("Member since May 13, 2019",textColor: c_black,isCentered: true),
+                SizedBox(height:10),
+                text("Based in Westfield NJ, 07090\nUnited States",textColor: c_black,isCentered: true,maxLine: 3),
 
-          //Spacer(flex: 1,),
-          //_buttonRow(),
-          
-          curveLine(),
-          GestureDetector(
-            onTap: ()=>Get.to(ItemsForSale()),
-            child:Image.asset(img_profile_itemForSale)),
-          GestureDetector(
-            onTap: ()=>Get.to(ItemsForSale()),
-            child: text("Items for sale")),
-          SizedBox(height:10)
-         
-          
-      ],)
+                //Spacer(flex: 1,),
+                //_buttonRow(),
+                
+                curveLine(),
+                GestureDetector(
+                  onTap: ()=>Get.to(ItemsForSale()),
+                  child:Image.asset(img_profile_itemForSale)),
+                GestureDetector(
+                  onTap: ()=>Get.to(ItemsForSale()),
+                  child: text("Items for sale")),
+                SizedBox(height:10)
+              
+                
+            ],),
+      )
       
-    );
+          ]));
   }
   Widget _report()=>Align(
     alignment: Alignment.centerRight,

@@ -507,6 +507,7 @@ Widget redButton() {
 //     ],
 //   );
 // }
+
 Widget itemsOverView(
     {String imageName = "",
     String personPicName = "",
@@ -701,3 +702,10 @@ AppBar appbarOfMessaging(context,
   );
 }
 
+class MyBehaviora extends ScrollBehavior {
+  @override
+  Widget buildViewportChrome(
+      BuildContext context, Widget child, AxisDirection axisDirection) {
+    return child;
+  }
+}

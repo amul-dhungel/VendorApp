@@ -18,30 +18,36 @@ class _SignUp6State extends State<SignUp6> {
       appBar: appbar(context,title: "SIgn Up"),
       body: Container(
         padding: const EdgeInsets.only(left:10,right: 10,top: 30,bottom: 20),
-        child: Column(crossAxisAlignment: CrossAxisAlignment.center,mainAxisAlignment: MainAxisAlignment.center,
-          children: [
+        child: CustomScrollView(
+          scrollBehavior: MyBehaviora(),
+          slivers: [
+            SliverFillRemaining(
+              hasScrollBody: false,
+              child: Column(crossAxisAlignment: CrossAxisAlignment.center,mainAxisAlignment: MainAxisAlignment.center,
+                children: [
 
-          text("Your account has been created!",isCentered: true,maxLine: 2),
-          Divider(color: mainColor,),
-          SizedBox(height:50),
-          text(text2,isCentered: true,maxLine:7),
-          Spacer(flex: 1,),
-          Padding(
-            padding: const EdgeInsets.only(left:20.0,right: 20,bottom: 20,top: 20),
-            child: buttonWid(label: "Become Verified",  border: true,function: (){},butColor: mainColor),
-          ),
-          text("https://forms.gle/FYPjnfLuFX4TzB4h9",textColor: mainColor,latterSpacing: 0.0),
-          
-          Spacer(flex: 1,),
-          GestureDetector(
-            onTap: (){
-              Get.to(Dashboard());
-            },
-            child: text("NEXT",textColor: mainColor))
-        ],),
+                text("Your account has been created!",isCentered: true,maxLine: 2),
+                Divider(color: mainColor,),
+                SizedBox(height:50),
+                text(text2,isCentered: true,maxLine:7),
+                Spacer(flex: 1,),
+                Padding(
+                  padding: const EdgeInsets.only(left:20.0,right: 20,bottom: 20,top: 20),
+                  child: buttonWid(label: "Become Verified",  border: true,function: (){},butColor: mainColor),
+                ),
+                text("https://forms.gle/FYPjnfLuFX4TzB4h9",textColor: mainColor,latterSpacing: 0.0),
+                
+                Spacer(flex: 1,),
+                GestureDetector(
+                  onTap: (){
+                    Get.to(Dashboard());
+                  },
+                  child: text("NEXT",textColor: mainColor))
+              ],),
+            ),]
       ),
       
-    );
+    ));
   }
 
 }

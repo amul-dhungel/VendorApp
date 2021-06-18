@@ -15,35 +15,38 @@ class _SafetyScreenState extends State<SafetyScreen> {
     return Scaffold(
       appBar: appbar(context, title: "Saftey"),
       backgroundColor: c_white,
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.all(15),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            _blueColorText(label: "Pay using PayPal service fees"),
-            SizedBox(height:5),
-            _blueColorText(label: txt_saftey1,blue: false),
-            _blueColorText(label: "Ship items with tracking"),
-            SizedBox(height:5),
-            _blueColorText(label: txt_saftey2,blue: false),
-            _blueColorText(label: "Plan details in advance"),
-            SizedBox(height:5),
-            _blueColorText(label: txt_saftey3,blue: false),
-            _blueColorText(label: "Bring a friend"),
-            SizedBox(height:5),
-            _blueColorText(label: txt_saftey4,blue: false),
-            _blueColorText(label: "Meet in public"),
-            SizedBox(height:5),
-            _blueColorText(label: txt_saftey5,blue: false),
-            _blueColorText(label: "Be careful meeting in private areas"),
-            SizedBox(height:5),
-            _blueColorText(label: txt_saftey6,blue: false),
-            
-            
-            
-           
-            
-        ],),
+      body: ScrollConfiguration(
+        behavior: MyBehaviora(),
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.all(15),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              _blueColorText(label: "Pay using PayPal service fees"),
+              SizedBox(height:5),
+              _blueColorText(label: txt_saftey1,blue: false),
+              _blueColorText(label: "Ship items with tracking"),
+              SizedBox(height:5),
+              _blueColorText(label: txt_saftey2,blue: false),
+              _blueColorText(label: "Plan details in advance"),
+              SizedBox(height:5),
+              _blueColorText(label: txt_saftey3,blue: false),
+              _blueColorText(label: "Bring a friend"),
+              SizedBox(height:5),
+              _blueColorText(label: txt_saftey4,blue: false),
+              _blueColorText(label: "Meet in public"),
+              SizedBox(height:5),
+              _blueColorText(label: txt_saftey5,blue: false),
+              _blueColorText(label: "Be careful meeting in private areas"),
+              SizedBox(height:5),
+              _blueColorText(label: txt_saftey6,blue: false),
+              
+              
+              
+             
+              
+          ],),
+        ),
       )
       
     );

@@ -21,40 +21,46 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: c_white,
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            //topWid(context),
-            SizedBox(height: 20),
-            _profilePic(),
-            SizedBox(height: 20),
-            text("Cameron Chin",
-                textColor: c_black,
-                isCentered: true,
-                fontWeight: FontWeight.bold),
-            SizedBox(height: 25),
-            text("Check out my store!", textColor: c_black, isCentered: true),
-            Spacer(
-              flex: 1,
-            ),
-            _buttonRow(),
-            Spacer(
-              flex: 1,
-            ),
-            curveLine(),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(30, 20, 20, 60),
-              child: buttonWid(
-                  label: "List an item",
-                  function: () {
-                    Get.to(ListAnItem());
-                  },
-                  border: true,
-                  butColor: mainColor),
-            ),
-          ],
-        ));
+        body: CustomScrollView(
+          scrollBehavior: MyBehaviora(),
+          slivers: [
+            SliverFillRemaining(
+              hasScrollBody: false,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  //topWid(context),
+                  SizedBox(height: 20),
+                  _profilePic(),
+                  SizedBox(height: 20),
+                  text("Cameron Chin",
+                      textColor: c_black,
+                      isCentered: true,
+                      fontWeight: FontWeight.bold),
+                  SizedBox(height: 25),
+                  text("Check out my store!", textColor: c_black, isCentered: true),
+                  Spacer(
+                    flex: 1,
+                  ),
+                  _buttonRow(),
+                  Spacer(
+                    flex: 1,
+                  ),
+                  curveLine(),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(30, 20, 20, 30),
+                    child: buttonWid(
+                        label: "List an item",
+                        function: () {
+                          Get.to(ListAnItem());
+                        },
+                        border: true,
+                        butColor: mainColor),
+                  ),
+                ],
+              ),
+        )]));
   }
 
   Widget _buttonRow() => Row(

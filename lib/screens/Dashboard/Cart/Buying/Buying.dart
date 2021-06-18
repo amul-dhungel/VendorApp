@@ -18,14 +18,17 @@ class _BuyingState extends State<Buying> {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: ListView(
-        padding: const EdgeInsets.fromLTRB(0,0,0 ,0),
-        children: [
-        _savedItems(),
-        _savedItemList(),
-        recentMsg(),
-        _chatHead(),
-      ]),
+      child: ScrollConfiguration(
+        behavior: MyBehaviora(),
+        child: ListView(
+          padding: const EdgeInsets.fromLTRB(0,0,0 ,0),
+          children: [
+          _savedItems(),
+          _savedItemList(),
+          recentMsg(),
+          _chatHead(),
+        ]),
+      ),
     );
   }
   Widget _chatHead(){
