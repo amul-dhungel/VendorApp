@@ -40,7 +40,8 @@ class _SignUp6State extends State<SignUp6> {
                 Spacer(flex: 1,),
                 GestureDetector(
                   onTap: (){
-                    Get.to(Dashboard());
+                    //Get.to(Dashboard());
+                    Navigator.push(context,PageRouteBuilder(pageBuilder:(_,__,___)=>Dashboard(),transitionDuration: Duration(seconds: 0)));
                   },
                   child: text("NEXT",textColor: mainColor))
               ],),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:vendr/Controller/SignUpController.dart';
 import 'package:vendr/screens/SignIn/Login2.dart';
 import 'package:vendr/utils/appWidget.dart';
 import 'package:vendr/utils/colors.dart';
@@ -13,6 +14,7 @@ class AfterSplash extends StatefulWidget {
 class _AfterSplashState extends State<AfterSplash> {
   @override
   Widget build(BuildContext context) {
+    Get.put(SignUpController());
     return Scaffold(
       backgroundColor: c_white,
       body: Container(
@@ -50,6 +52,9 @@ class _AfterSplashState extends State<AfterSplash> {
         SizedBox(height:20),
         buttonWid(label: "Sign Up",border: true,borderColor: c_white,
           function: (){
+          
+                    //Get.find<SignUpController>().signUp();
+          
           Get.to(SignUp2());
         }),
       ],
