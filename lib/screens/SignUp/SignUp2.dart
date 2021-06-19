@@ -10,6 +10,8 @@ class SignUp2 extends StatefulWidget {
 }
 
 class _SignUp2State extends State<SignUp2> {
+  var emailController=TextEditingController(),firstNameController=TextEditingController(),lastNameController=TextEditingController(),
+  passwordController=TextEditingController(),confirmPasswordController=TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,15 +30,16 @@ class _SignUp2State extends State<SignUp2> {
                 children: [
                 logo(),
                 SizedBox(height:20),
-                textInputContainer(label: "Email Address",inputType: TextInputType.emailAddress),
+                textInputContainer(label: "Email Address",inputType: TextInputType.emailAddress,textEditingController: emailController),
                 Spacer(flex: 1,),
-                textInputContainer(label: "First Name",inputType: TextInputType.name),
-                textInputContainer(label: "Last Name",inputType: TextInputType.name),
+                textInputContainer(label: "First Name",inputType: TextInputType.name,textEditingController: firstNameController),
+                textInputContainer(label: "Last Name",inputType: TextInputType.name,textEditingController: lastNameController),
                 Spacer(flex: 1,),
-                textInputContainer(label: "Password",inputType: TextInputType.text,obscure: true),
-                textInputContainer(label: "Confirm Password",inputType: TextInputType.text,obscure: true),
+                textInputContainer(label: "Password",inputType: TextInputType.text,obscure: true,textEditingController: passwordController),
+                textInputContainer(label: "Confirm Password",inputType: TextInputType.text,obscure: true,textEditingController: confirmPasswordController),
                 Spacer(flex: 3  ,),
                 buttonWid(label: "Next", border: true,function: (){
+                  
                   Get.to(SignUp3());
                 },butColor: c_button_inactive),
                 

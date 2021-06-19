@@ -33,7 +33,8 @@ class _LogIn2State extends State<LogIn2> {
                 text("Forget Password?",textColor: mainColor),
                 SizedBox(height: 30,),
                 buttonWid(label: "Log in",border: true, function: (){
-                  Get.to(Dashboard());
+                  print("Login button");
+                  Get.to(()=>Dashboard());
                 },butColor: c_button_inactive),
                 Spacer(flex: 1,),
                 Center(child: text("Terms of service",lineThrough: true))
