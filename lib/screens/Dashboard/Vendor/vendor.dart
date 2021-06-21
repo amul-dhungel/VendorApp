@@ -18,8 +18,7 @@ class _VendorItems1State extends State<VendorItems1> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
-      backgroundColor: c_white,
+        backgroundColor: c_white,
         //appBar: AppBar(backgroundColor: Colors.transparent),
         body: Column(
           children: [
@@ -28,6 +27,8 @@ class _VendorItems1State extends State<VendorItems1> {
               child: Container(
                 width: double.infinity,
                 child: TinderSwapCard(
+                  animDuration: 100,
+                  swipeEdge: 2.0,
                   orientation: AmassOrientation.TOP,
                   totalNum: albumpics.length,
                   maxHeight: MediaQuery.of(context).size.height * 0.9,
@@ -57,257 +58,268 @@ class _VendorItems1State extends State<VendorItems1> {
           ],
         ));
   }
-  
+
   Widget buttonWidget() {
-  return Container(
-      height: 100,
-      width: double.infinity,
-      child: Stack(
-        children: [
-          Positioned(
-            bottom: 15,left: MediaQuery.of(context).padding.left+50,top:20,
-            child: yellowBuutton()),
-          Positioned(
-            bottom: 25,left: MediaQuery.of(context).padding.left+125,top:3,
+    return Container(
+        height: 100,
+        width: double.infinity,
+        child: Stack(
+          children: [
+            Positioned(
+                bottom: 15,
+                left: MediaQuery.of(context).padding.left + 50,
+                top: 20,
+                child: yellowBuutton()),
+            Positioned(
+                bottom: 25,
+                left: MediaQuery.of(context).padding.left + 125,
+                top: 3,
                 child: redButton()),
-          Positioned(
-            bottom: 25,right: MediaQuery.of(context).padding.left+125,top:3,
+            Positioned(
+                bottom: 25,
+                right: MediaQuery.of(context).padding.left + 125,
+                top: 3,
                 child: GestureDetector(
-                  onTap: ()=>Get.to(ProductAsking()),
-                  child: blueButton())),
-          Positioned(
-            bottom: 15,right: MediaQuery.of(context).padding.left+50,top:20,
+                    onTap: () => Get.to(ProductAsking()), child: blueButton())),
+            Positioned(
+                bottom: 15,
+                right: MediaQuery.of(context).padding.left + 50,
+                top: 20,
                 child: GestureDetector(
-                  onTap: (){
-                    Get.bottomSheet(ProductSearch());
-                  },
-                  child: greenButton())),
-          Positioned(
-            bottom: 5,right: 10,left: 10,
-            child: SvgPicture.asset('images/Path 1.svg',)),
-        ],
-      ));
-}
-List<Widget> albumpics = [
-      itemsOverView(
-          imageName: "images/vendorItem1Show.png",
-          personPicName: "images/vendorperson1.png",
-          personName: "Karl C.",
-          verficiation: "Verified",
-          verified: true,
-          itemName: "Gold Blue-Eyes White Dragon PSA 8",
-          price: "200\$ Asking Price"),
-      itemsOverView(
-          imageName: "images/vendorItems2Show.png",
-          personPicName: "images/vendorPerson2.png",
-          personName: "Alex F.",
-          itemName: "Adidas Yeezy Boost 350 V2",
-          price: "200\$ Asking Price",
-          distance: "7 miles away",
-          verified: false),
-      itemsOverView(
-          imageName: "images/vendorItems3Show.png",
-          personPicName: "images/vendorPerson2.png",
-          personName: "Alex F.",
-          itemName: "Adidas Yeezy Boost 350 V2",
-          price: "200\$ Asking Price",
-          distance: "7 miles away",
-          verified: false),
-          itemsOverView(
-          imageName: "images/vendorItem1Show.png",
-          personPicName: "images/vendorperson1.png",
-          personName: "Karl C.",
-          verficiation: "Verified",
-          verified: true,
-          itemName: "Gold Blue-Eyes White Dragon PSA 8",
-          price: "200\$ Asking Price"),
-      itemsOverView(
-          imageName: "images/vendorItems2Show.png",
-          personPicName: "images/vendorPerson2.png",
-          personName: "Alex F.",
-          itemName: "Adidas Yeezy Boost 350 V2",
-          price: "200\$ Asking Price",
-          distance: "7 miles away",
-          verified: false),
-      itemsOverView(
-          imageName: "images/vendorItem1Show.png",
-          personPicName: "images/vendorperson1.png",
-          personName: "Karl C.",
-          verficiation: "Verified",
-          verified: true,
-          itemName: "Gold Blue-Eyes White Dragon PSA 8",
-          price: "200\$ Asking Price"),
-      itemsOverView(
-          imageName: "images/vendorItems2Show.png",
-          personPicName: "images/vendorPerson2.png",
-          personName: "Alex F.",
-          itemName: "Adidas Yeezy Boost 350 V2",
-          price: "200\$ Asking Price",
-          distance: "7 miles away",
-          verified: false),
-      itemsOverView(
-          imageName: "images/vendorItem1Show.png",
-          personPicName: "images/vendorperson1.png",
-          personName: "Karl C.",
-          verficiation: "Verified",
-          verified: true,
-          itemName: "Gold Blue-Eyes White Dragon PSA 8",
-          price: "200\$ Asking Price"),
-      itemsOverView(
-          imageName: "images/vendorItems2Show.png",
-          personPicName: "images/vendorPerson2.png",
-          personName: "Alex F.",
-          itemName: "Adidas Yeezy Boost 350 V2",
-          price: "200\$ Asking Price",
-          distance: "7 miles away",
-          verified: false),
-      itemsOverView(
-          imageName: "images/vendorItem1Show.png",
-          personPicName: "images/vendorperson1.png",
-          personName: "Karl C.",
-          verficiation: "Verified",
-          verified: true,
-          itemName: "Gold Blue-Eyes White Dragon PSA 8",
-          price: "200\$ Asking Price"),
-      itemsOverView(
-          imageName: "images/vendorItems2Show.png",
-          personPicName: "images/vendorPerson2.png",
-          personName: "Alex F.",
-          itemName: "Adidas Yeezy Boost 350 V2",
-          price: "200\$ Asking Price",
-          distance: "7 miles away",
-          verified: false),
-      itemsOverView(
-          imageName: "images/vendorItem1Show.png",
-          personPicName: "images/vendorperson1.png",
-          personName: "Karl C.",
-          verficiation: "Verified",
-          verified: true,
-          itemName: "Gold Blue-Eyes White Dragon PSA 8",
-          price: "200\$ Asking Price"),
-      itemsOverView(
-          imageName: "images/vendorItems2Show.png",
-          personPicName: "images/vendorPerson2.png",
-          personName: "Alex F.",
-          itemName: "Adidas Yeezy Boost 350 V2",
-          price: "200\$ Asking Price",
-          distance: "7 miles away",
-          verified: false),
-      itemsOverView(
-          imageName: "images/vendorItem1Show.png",
-          personPicName: "images/vendorperson1.png",
-          personName: "Karl C.",
-          verficiation: "Verified",
-          verified: true,
-          itemName: "Gold Blue-Eyes White Dragon PSA 8",
-          price: "200\$ Asking Price"),
-      itemsOverView(
-          imageName: "images/vendorItems2Show.png",
-          personPicName: "images/vendorPerson2.png",
-          personName: "Alex F.",
-          itemName: "Adidas Yeezy Boost 350 V2",
-          price: "200\$ Asking Price",
-          distance: "7 miles away",
-          verified: false),
-      itemsOverView(
-          imageName: "images/vendorItem1Show.png",
-          personPicName: "images/vendorperson1.png",
-          personName: "Karl C.",
-          verficiation: "Verified",
-          verified: true,
-          itemName: "Gold Blue-Eyes White Dragon PSA 8",
-          price: "200\$ Asking Price"),
-      itemsOverView(
-          imageName: "images/vendorItems2Show.png",
-          personPicName: "images/vendorPerson2.png",
-          personName: "Alex F.",
-          itemName: "Adidas Yeezy Boost 350 V2",
-          price: "200\$ Asking Price",
-          distance: "7 miles away",
-          verified: false),
-      itemsOverView(
-          imageName: "images/vendorItem1Show.png",
-          personPicName: "images/vendorperson1.png",
-          personName: "Karl C.",
-          verficiation: "Verified",
-          verified: true,
-          itemName: "Gold Blue-Eyes White Dragon PSA 8",
-          price: "200\$ Asking Price"),
-      itemsOverView(
-          imageName: "images/vendorItems2Show.png",
-          personPicName: "images/vendorPerson2.png",
-          personName: "Alex F.",
-          itemName: "Adidas Yeezy Boost 350 V2",
-          price: "200\$ Asking Price",
-          distance: "7 miles away",
-          verified: false),
-      itemsOverView(
-          imageName: "images/vendorItem1Show.png",
-          personPicName: "images/vendorperson1.png",
-          personName: "Karl C.",
-          verficiation: "Verified",
-          verified: true,
-          itemName: "Gold Blue-Eyes White Dragon PSA 8",
-          price: "200\$ Asking Price"),
-      itemsOverView(
-          imageName: "images/vendorItems2Show.png",
-          personPicName: "images/vendorPerson2.png",
-          personName: "Alex F.",
-          itemName: "Adidas Yeezy Boost 350 V2",
-          price: "200\$ Asking Price",
-          distance: "7 miles away",
-          verified: false),
-      itemsOverView(
-          imageName: "images/vendorItem1Show.png",
-          personPicName: "images/vendorperson1.png",
-          personName: "Karl C.",
-          verficiation: "Verified",
-          verified: true,
-          itemName: "Gold Blue-Eyes White Dragon PSA 8",
-          price: "200\$ Asking Price"),
-      itemsOverView(
-          imageName: "images/vendorItems2Show.png",
-          personPicName: "images/vendorPerson2.png",
-          personName: "Alex F.",
-          itemName: "Adidas Yeezy Boost 350 V2",
-          price: "200\$ Asking Price",
-          distance: "7 miles away",
-          verified: false),
-      itemsOverView(
-          imageName: "images/vendorItem1Show.png",
-          personPicName: "images/vendorperson1.png",
-          personName: "Karl C.",
-          verficiation: "Verified",
-          verified: true,
-          itemName: "Gold Blue-Eyes White Dragon PSA 8",
-          price: "200\$ Asking Price"),
-      itemsOverView(
-          imageName: "images/vendorItems2Show.png",
-          personPicName: "images/vendorPerson2.png",
-          personName: "Alex F.",
-          itemName: "Adidas Yeezy Boost 350 V2",
-          price: "200\$ Asking Price",
-          distance: "7 miles away",
-          verified: false),
-      itemsOverView(
-          imageName: "images/vendorItem1Show.png",
-          personPicName: "images/vendorperson1.png",
-          personName: "Karl C.",
-          verficiation: "Verified",
-          verified: true,
-          itemName: "Gold Blue-Eyes White Dragon PSA 8",
-          price: "200\$ Asking Price"),
-      itemsOverView(
-          imageName: "images/vendorItems2Show.png",
-          personPicName: "images/vendorPerson2.png",
-          personName: "Alex F.",
-          itemName: "Adidas Yeezy Boost 350 V2",
-          price: "200\$ Asking Price",
-          distance: "7 miles away",
-          verified: false),
-      
-    ];
-    
+                    onTap: () {
+                      Get.bottomSheet(ProductSearch());
+                    },
+                    child: greenButton())),
+            Positioned(
+                bottom: 5,
+                right: 10,
+                left: 10,
+                child: SvgPicture.asset(
+                  'images/Path 1.svg',
+                )),
+          ],
+        ));
+  }
+
+  List<Widget> albumpics = [
+    itemsOverView(
+        imageName: "images/vendorItem1Show.png",
+        personPicName: "images/vendorperson1.png",
+        personName: "Karl C.",
+        verficiation: "Verified",
+        verified: true,
+        itemName: "Gold Blue-Eyes White Dragon PSA 8",
+        price: "200\$ Asking Price"),
+    itemsOverView(
+        imageName: "images/vendorItems2Show.png",
+        personPicName: "images/vendorPerson2.png",
+        personName: "Alex F.",
+        itemName: "Adidas Yeezy Boost 350 V2",
+        price: "200\$ Asking Price",
+        distance: "7 miles away",
+        verified: false),
+    itemsOverView(
+        imageName: "images/vendorItems3Show.png",
+        personPicName: "images/vendorPerson2.png",
+        personName: "Alex F.",
+        itemName: "Adidas Yeezy Boost 350 V2",
+        price: "200\$ Asking Price",
+        distance: "7 miles away",
+        verified: false),
+    itemsOverView(
+        imageName: "images/vendorItem1Show.png",
+        personPicName: "images/vendorperson1.png",
+        personName: "Karl C.",
+        verficiation: "Verified",
+        verified: true,
+        itemName: "Gold Blue-Eyes White Dragon PSA 8",
+        price: "200\$ Asking Price"),
+    itemsOverView(
+        imageName: "images/vendorItems2Show.png",
+        personPicName: "images/vendorPerson2.png",
+        personName: "Alex F.",
+        itemName: "Adidas Yeezy Boost 350 V2",
+        price: "200\$ Asking Price",
+        distance: "7 miles away",
+        verified: false),
+    itemsOverView(
+        imageName: "images/vendorItem1Show.png",
+        personPicName: "images/vendorperson1.png",
+        personName: "Karl C.",
+        verficiation: "Verified",
+        verified: true,
+        itemName: "Gold Blue-Eyes White Dragon PSA 8",
+        price: "200\$ Asking Price"),
+    itemsOverView(
+        imageName: "images/vendorItems2Show.png",
+        personPicName: "images/vendorPerson2.png",
+        personName: "Alex F.",
+        itemName: "Adidas Yeezy Boost 350 V2",
+        price: "200\$ Asking Price",
+        distance: "7 miles away",
+        verified: false),
+    itemsOverView(
+        imageName: "images/vendorItem1Show.png",
+        personPicName: "images/vendorperson1.png",
+        personName: "Karl C.",
+        verficiation: "Verified",
+        verified: true,
+        itemName: "Gold Blue-Eyes White Dragon PSA 8",
+        price: "200\$ Asking Price"),
+    itemsOverView(
+        imageName: "images/vendorItems2Show.png",
+        personPicName: "images/vendorPerson2.png",
+        personName: "Alex F.",
+        itemName: "Adidas Yeezy Boost 350 V2",
+        price: "200\$ Asking Price",
+        distance: "7 miles away",
+        verified: false),
+    itemsOverView(
+        imageName: "images/vendorItem1Show.png",
+        personPicName: "images/vendorperson1.png",
+        personName: "Karl C.",
+        verficiation: "Verified",
+        verified: true,
+        itemName: "Gold Blue-Eyes White Dragon PSA 8",
+        price: "200\$ Asking Price"),
+    itemsOverView(
+        imageName: "images/vendorItems2Show.png",
+        personPicName: "images/vendorPerson2.png",
+        personName: "Alex F.",
+        itemName: "Adidas Yeezy Boost 350 V2",
+        price: "200\$ Asking Price",
+        distance: "7 miles away",
+        verified: false),
+    itemsOverView(
+        imageName: "images/vendorItem1Show.png",
+        personPicName: "images/vendorperson1.png",
+        personName: "Karl C.",
+        verficiation: "Verified",
+        verified: true,
+        itemName: "Gold Blue-Eyes White Dragon PSA 8",
+        price: "200\$ Asking Price"),
+    itemsOverView(
+        imageName: "images/vendorItems2Show.png",
+        personPicName: "images/vendorPerson2.png",
+        personName: "Alex F.",
+        itemName: "Adidas Yeezy Boost 350 V2",
+        price: "200\$ Asking Price",
+        distance: "7 miles away",
+        verified: false),
+    itemsOverView(
+        imageName: "images/vendorItem1Show.png",
+        personPicName: "images/vendorperson1.png",
+        personName: "Karl C.",
+        verficiation: "Verified",
+        verified: true,
+        itemName: "Gold Blue-Eyes White Dragon PSA 8",
+        price: "200\$ Asking Price"),
+    itemsOverView(
+        imageName: "images/vendorItems2Show.png",
+        personPicName: "images/vendorPerson2.png",
+        personName: "Alex F.",
+        itemName: "Adidas Yeezy Boost 350 V2",
+        price: "200\$ Asking Price",
+        distance: "7 miles away",
+        verified: false),
+    itemsOverView(
+        imageName: "images/vendorItem1Show.png",
+        personPicName: "images/vendorperson1.png",
+        personName: "Karl C.",
+        verficiation: "Verified",
+        verified: true,
+        itemName: "Gold Blue-Eyes White Dragon PSA 8",
+        price: "200\$ Asking Price"),
+    itemsOverView(
+        imageName: "images/vendorItems2Show.png",
+        personPicName: "images/vendorPerson2.png",
+        personName: "Alex F.",
+        itemName: "Adidas Yeezy Boost 350 V2",
+        price: "200\$ Asking Price",
+        distance: "7 miles away",
+        verified: false),
+    itemsOverView(
+        imageName: "images/vendorItem1Show.png",
+        personPicName: "images/vendorperson1.png",
+        personName: "Karl C.",
+        verficiation: "Verified",
+        verified: true,
+        itemName: "Gold Blue-Eyes White Dragon PSA 8",
+        price: "200\$ Asking Price"),
+    itemsOverView(
+        imageName: "images/vendorItems2Show.png",
+        personPicName: "images/vendorPerson2.png",
+        personName: "Alex F.",
+        itemName: "Adidas Yeezy Boost 350 V2",
+        price: "200\$ Asking Price",
+        distance: "7 miles away",
+        verified: false),
+    itemsOverView(
+        imageName: "images/vendorItem1Show.png",
+        personPicName: "images/vendorperson1.png",
+        personName: "Karl C.",
+        verficiation: "Verified",
+        verified: true,
+        itemName: "Gold Blue-Eyes White Dragon PSA 8",
+        price: "200\$ Asking Price"),
+    itemsOverView(
+        imageName: "images/vendorItems2Show.png",
+        personPicName: "images/vendorPerson2.png",
+        personName: "Alex F.",
+        itemName: "Adidas Yeezy Boost 350 V2",
+        price: "200\$ Asking Price",
+        distance: "7 miles away",
+        verified: false),
+    itemsOverView(
+        imageName: "images/vendorItem1Show.png",
+        personPicName: "images/vendorperson1.png",
+        personName: "Karl C.",
+        verficiation: "Verified",
+        verified: true,
+        itemName: "Gold Blue-Eyes White Dragon PSA 8",
+        price: "200\$ Asking Price"),
+    itemsOverView(
+        imageName: "images/vendorItems2Show.png",
+        personPicName: "images/vendorPerson2.png",
+        personName: "Alex F.",
+        itemName: "Adidas Yeezy Boost 350 V2",
+        price: "200\$ Asking Price",
+        distance: "7 miles away",
+        verified: false),
+    itemsOverView(
+        imageName: "images/vendorItem1Show.png",
+        personPicName: "images/vendorperson1.png",
+        personName: "Karl C.",
+        verficiation: "Verified",
+        verified: true,
+        itemName: "Gold Blue-Eyes White Dragon PSA 8",
+        price: "200\$ Asking Price"),
+    itemsOverView(
+        imageName: "images/vendorItems2Show.png",
+        personPicName: "images/vendorPerson2.png",
+        personName: "Alex F.",
+        itemName: "Adidas Yeezy Boost 350 V2",
+        price: "200\$ Asking Price",
+        distance: "7 miles away",
+        verified: false),
+    itemsOverView(
+        imageName: "images/vendorItem1Show.png",
+        personPicName: "images/vendorperson1.png",
+        personName: "Karl C.",
+        verficiation: "Verified",
+        verified: true,
+        itemName: "Gold Blue-Eyes White Dragon PSA 8",
+        price: "200\$ Asking Price"),
+    itemsOverView(
+        imageName: "images/vendorItems2Show.png",
+        personPicName: "images/vendorPerson2.png",
+        personName: "Alex F.",
+        itemName: "Adidas Yeezy Boost 350 V2",
+        price: "200\$ Asking Price",
+        distance: "7 miles away",
+        verified: false),
+  ];
+
 // =======
 //         body: GestureDetector(
 //           onTap: (){
