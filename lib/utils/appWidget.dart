@@ -130,7 +130,7 @@ AppBar appbar(context, {required String title}) {
       ],
     ),
     elevation: 0,
-   toolbarHeight: 50,
+    toolbarHeight: 50,
     titleSpacing: 1.0,
     leading: GestureDetector(
         onTap: () => Get.back(),
@@ -141,16 +141,23 @@ AppBar appbar(context, {required String title}) {
             ))),
     flexibleSpace: Column(
       mainAxisAlignment: MainAxisAlignment.end,
-      children: [
-        
-        curveLine()],
+      children: [curveLine()],
     ),
   );
 }
-Widget editIcon(){
+
+Widget editIcon() {
   return Container(
-                  height: 40,width: 40,decoration: BoxDecoration(shape: BoxShape.circle,color: c_white,),
-                  child: SvgPicture.asset("images/edit.svg",color: mainColor,));
+      height: 40,
+      width: 40,
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        color: c_white,
+      ),
+      child: SvgPicture.asset(
+        "images/edit.svg",
+        color: mainColor,
+      ));
 }
 
 // component of boxdecoration for containers
@@ -520,7 +527,6 @@ Widget itemsOverView(
     String price = ""}) {
   return Container(
     padding: const EdgeInsets.fromLTRB(30, 15, 30, 0),
-    
     width: double.infinity,
     decoration: BoxDecoration(
         //color: c_red,
@@ -536,8 +542,10 @@ Widget itemsOverView(
           bottom: 30,
           right: 0,
           child: GestureDetector(
-            onTap: ()=>Get.to(ProductInformation()),
-            child: Image.asset("images/info.png")),
+              onTap: () => Get.to(ProductInformation()),
+              child: Image.asset(
+                "images/info.png",
+              )),
         ),
         Positioned(
           bottom: 20,
@@ -571,9 +579,9 @@ Widget itemsOverView(
           children: [
             Row(
               children: [
-                bar( i == 1 ? c_white : Colors.transparent),
-                bar( i == 2 ? c_white : Colors.transparent),
-                bar( i == 3 ? c_white : Colors.transparent),
+                bar(i == 1 ? c_white : Colors.transparent),
+                bar(i == 2 ? c_white : Colors.transparent),
+                bar(i == 3 ? c_white : Colors.transparent),
               ],
             ),
             Row(
@@ -622,18 +630,15 @@ Widget itemsOverView(
   );
 }
 
-Widget bar( Color color) {
+Widget bar(Color color) {
   return Expanded(
     flex: 1,
     child: Container(
       height: 3,
-      
       decoration: boxDecoration(radius: 10, fillcolor: color),
     ),
   );
 }
-
-
 
 Widget recentMsg() {
   return Row(
@@ -648,39 +653,57 @@ Widget recentMsg() {
     ],
   );
 }
-smallDialog(context,String label)=>showDialog(context: context, builder: (context)=> Column(mainAxisAlignment: MainAxisAlignment.start,crossAxisAlignment: CrossAxisAlignment.end,
-                            children: [
-                              Container(width: 100,padding: const EdgeInsets.all(5),
-                              margin:  EdgeInsets.only(top: MediaQuery.of(context).padding.top+5,right: 30),
-                              color: c_white,
-                              child: text(label),
-                              ),
-                            ],
-                          
-                        ));
+
+smallDialog(context, String label) => showDialog(
+    context: context,
+    builder: (context) => Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            Container(
+              width: 100,
+              padding: const EdgeInsets.all(5),
+              margin: EdgeInsets.only(
+                  top: MediaQuery.of(context).padding.top + 5, right: 30),
+              color: c_white,
+              child: text(label),
+            ),
+          ],
+        ));
 
 // component of an appbar
 AppBar appbarOfMessaging(context,
-    {required String title, String? messageType,bool textShow=true}) {
+    {required String title, String? messageType, bool textShow = true}) {
   return AppBar(
     backgroundColor: c_white,
     title: Row(
       children: [
         text(title, fontWeight: FontWeight.bold, fontSize: 20.0),
-        Spacer(flex: 1,),
-        textShow?Container(
-          width: 2,
-          height: 40,
-          color: mainColor,
-        ):Container(),
-        SizedBox(
-          width:textShow? 10:0,
+        Spacer(
+          flex: 1,
         ),
-        textShow?text(messageType.toString()+"  ",
-            textColor: mainColor, fontSize: 30.0, fontWeight: FontWeight.bold):
-            GestureDetector(
-              onTap: ()=>smallDialog(context,"Remove"),
-              child: Icon(Icons.more_vert,color: mainColor,size: 40,))
+        textShow
+            ? Container(
+                width: 2,
+                height: 40,
+                color: mainColor,
+              )
+            : Container(),
+        SizedBox(
+          width: textShow ? 10 : 0,
+        ),
+        textShow
+            ? text(messageType.toString() + "  ",
+                textColor: mainColor,
+                fontSize: 30.0,
+                fontWeight: FontWeight.bold)
+            : GestureDetector(
+                onTap: () => smallDialog(context, "Remove"),
+                child: Icon(
+                  Icons.more_vert,
+                  color: mainColor,
+                  size: 40,
+                ))
       ],
     ),
     elevation: 0,
@@ -688,13 +711,13 @@ AppBar appbarOfMessaging(context,
     titleSpacing: 1.0,
     leading: GestureDetector(
         onTap: () => Get.back(),
-        child:Container(
+        child: Container(
             padding: const EdgeInsets.all(8),
             child: SvgPicture.asset(
-          "images/backarrow.svg",
-          height: 1,
-          width: 1,
-        ))),
+              "images/backarrow.svg",
+              height: 1,
+              width: 1,
+            ))),
     flexibleSpace: Column(
       mainAxisAlignment: MainAxisAlignment.end,
       children: [SizedBox(height: 15.2), curveLine()],

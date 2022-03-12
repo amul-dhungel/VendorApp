@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_tindercard/flutter_tindercard.dart';
@@ -24,33 +25,53 @@ class _VendorItems1State extends State<VendorItems1> {
           children: [
             Expanded(
               flex: 1,
-              child: Container(
-                width: double.infinity,
-                child: TinderSwapCard(
-                  animDuration: 100,
-                  swipeEdge: 2.0,
-                  orientation: AmassOrientation.TOP,
-                  totalNum: albumpics.length,
-                  maxHeight: MediaQuery.of(context).size.height * 0.9,
-                  maxWidth: MediaQuery.of(context).size.width,
-                  minHeight: MediaQuery.of(context).size.height * 0.8,
-                  minWidth: MediaQuery.of(context).size.width * 0.8,
-                  cardBuilder: (context, index) =>
-                      Container(child: albumpics[index]),
-                  swipeUpdateCallback:
-                      (DragUpdateDetails details, Alignment align) {
-                    /// Get swiping card's alignment
-                    if (align.x < 0) {
-                      setState(() {
-                        changer = Colors.blue;
-                      });
-                    } else if (align.x > 0) {
-                      //Card is RIGHT swiping
-                      setState(() {
-                        changer = Colors.amber;
-                      });
-                    }
-                  },
+              child: GestureDetector(
+                onTap: () {
+                  print("hi");
+                  CarouselSlider(
+                    items: [
+                      for (var title in albumpics) Container(child: title)
+                    ],
+                    options: CarouselOptions(
+                      viewportFraction: 1,
+                      enlargeCenterPage: false,
+                      initialPage: 0,
+                      enableInfiniteScroll: true,
+                      height: MediaQuery.of(context).size.height - 230,
+                    ),
+                  );
+                },
+                child: Container(
+                  color: Colors.green,
+                  width: double.infinity,
+                  child: TinderSwapCard(
+                    animDuration: 100,
+                    swipeEdge: 2.0,
+                    orientation: AmassOrientation.TOP,
+                    totalNum: albumpics.length,
+                    maxHeight: MediaQuery.of(context).size.height * 0.9,
+                    maxWidth: MediaQuery.of(context).size.width,
+                    minHeight: MediaQuery.of(context).size.height * 0.8,
+                    minWidth: MediaQuery.of(context).size.width * 0.8,
+                    cardBuilder: (context, index) => Container(
+                        width: double.infinity,
+                        color: Colors.red,
+                        child: albumpics[index]),
+                    swipeUpdateCallback:
+                        (DragUpdateDetails details, Alignment align) {
+                      /// Get swiping card's alignment
+                      if (align.x < 0) {
+                        setState(() {
+                          changer = Colors.blue;
+                        });
+                      } else if (align.x > 0) {
+                        //Card is RIGHT swiping
+                        setState(() {
+                          changer = Colors.amber;
+                        });
+                      }
+                    },
+                  ),
                 ),
               ),
             ),
